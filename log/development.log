@@ -1476,3 +1476,143 @@ Processing by ProfilesController#destroy as */*
 Completed 404 Not Found in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms)
 
 
+Started POST "/blog_templates" for 127.0.0.1 at 2017-02-17 14:26:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogTemplatesController#create as */*
+  Parameters: {"blog_template"=>{"title"=>"metal rules", "subject"=>"reason why metal rules", "body"=>"I love metal becuase its aweosme, and I do not know why people are not fans"}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 3.1ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'title' for BlogTemplate.):
+  
+app/controllers/blog_templates_controller.rb:21:in `create'
+Started POST "/blog_templates" for 127.0.0.1 at 2017-02-17 14:28:44 -0500
+Processing by BlogTemplatesController#create as */*
+  Parameters: {"blog_template"=>{"title"=>"metal rules", "subject"=>"reason why metal rules", "body"=>"I love metal becuase its aweosme, and I do not know why people are not fans"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Blog_template, expected /Users/dozer/wdi/projects/forum-project-backend/app/models/blog_template.rb to define it):
+  
+app/controllers/blog_templates_controller.rb:21:in `create'
+Started POST "/blog_templates" for 127.0.0.1 at 2017-02-17 14:29:31 -0500
+Processing by BlogTemplatesController#create as */*
+  Parameters: {"blog_template"=>{"title"=>"metal rules", "subject"=>"reason why metal rules", "body"=>"I love metal becuase its aweosme, and I do not know why people are not fans"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Blog_Template, expected /Users/dozer/wdi/projects/forum-project-backend/app/models/blog_template.rb to define it):
+  
+app/controllers/blog_templates_controller.rb:21:in `create'
+Started POST "/blog_templates" for 127.0.0.1 at 2017-02-17 14:31:38 -0500
+Processing by BlogTemplatesController#create as */*
+  Parameters: {"blog_template"=>{"title"=>"metal rules", "subject"=>"reason why metal rules", "body"=>"I love metal becuase its aweosme, and I do not know why people are not fans"}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'title' for BlogTemplate.):
+  
+app/controllers/blog_templates_controller.rb:21:in `create'
+Started POST "/blog_templates" for 127.0.0.1 at 2017-02-17 14:36:33 -0500
+Processing by BlogTemplatesController#create as */*
+  Parameters: {"blog_template"=>{"title"=>"metal rules", "subject"=>"reason why metal rules", "body"=>"I love metal becuase its aweosme, and I do not know why people are not fans"}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'title' for BlogTemplate.):
+  
+app/controllers/blog_templates_controller.rb:21:in `create'
+Started POST "/blog_templates" for 127.0.0.1 at 2017-02-17 14:42:24 -0500
+Processing by BlogTemplatesController#create as */*
+  Parameters: {"blog_template"=>{"title"=>"metal rules", "subject"=>"reason why metal rules", "body"=>"I love metal becuase its aweosme, and I do not know why people are not fans"}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'title' for BlogTemplate.):
+  
+app/controllers/blog_templates_controller.rb:21:in `create'
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (190.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "RockinDebates_test"[0m
+  [1m[35m (443.4ms)[0m  [1m[35mCREATE DATABASE "RockinDebates_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "blog_templates" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "examples" ("id" serial primary key, "text" text NOT NULL, "user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_examples_on_user_id" ON "examples" USING btree ("user_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" serial primary key, "username" character varying NOT NULL, "favorite_genre" character varying, "favorite_band" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying NOT NULL, "token" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_token" ON "users" USING btree ("token")[0m
+  [1m[35m (7.4ms)[0m  [1m[35mALTER TABLE "examples" ADD CONSTRAINT "fk_rails_ae101d15cc"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170217151157')[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES
+('1'),
+('2'),
+('20170216231321');
+
+[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-17 19:46:20 UTC], ["updated_at", 2017-02-17 19:46:20 UTC]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/blog_templates" for 127.0.0.1 at 2017-02-17 14:46:24 -0500
+Processing by BlogTemplatesController#create as */*
+  Parameters: {"blog_template"=>{"title"=>"metal rules", "subject"=>"reason why metal rules", "body"=>"I love metal becuase its aweosme, and I do not know why people are not fans"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'title' for BlogTemplate.):
+  
+app/controllers/blog_templates_controller.rb:21:in `create'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(419656018510401645);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(419656018510401645)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(419656018510401645);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBlogTemplates (20170217151157)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.4ms)[0m  [1m[35mDROP TABLE "blog_templates"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170217151157"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(419656018510401645)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(419656018510401645);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBlogTemplates (20170217151157)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "blog_templates" ("id" serial primary key, "blog_title" character varying NOT NULL, "subject" character varying NOT NULL, "body" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170217151157"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(419656018510401645)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "blog_templates" ("blog_title", "subject", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["blog_title", "rawr"], ["subject", "this is a test"], ["body", "testing this create feature"], ["created_at", 2017-02-17 20:17:32 UTC], ["updated_at", 2017-02-17 20:17:32 UTC]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# :nodoc:
 class BlogTemplatesController < ApplicationController
   before_action :set_blog_template, only: [:show, :update, :destroy]
 
@@ -18,7 +21,7 @@ class BlogTemplatesController < ApplicationController
     @blog_template = BlogTemplate.new(blog_template_params)
 
     if @blog_template.save
-      render json: @blog_template, status: :created, location: @blog_template
+      render json: @blog_template, status: :created
     else
       render json: @blog_template.errors, status: :unprocessable_entity
     end
@@ -39,13 +42,14 @@ class BlogTemplatesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_blog_template
-      @blog_template = BlogTemplate.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def blog_template_params
-      params.fetch(:blog_template, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_blog_template
+    @blog_template = BlogTemplate.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def blog_template_params
+    params.require(:blog_template).permit(:blog_title, :subject, :body)
+  end
 end
