@@ -31,6 +31,7 @@ class ProfilesController < ApplicationController
     def update
       if @profile.update(profile_params)
         render json: @profile
+        head :no_content
       else
         render json: @profile.errors, status: :unprocessable_entity
       end
