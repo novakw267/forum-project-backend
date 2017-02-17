@@ -1,0 +1,2 @@
+class BlogTemplate < ApplicationRecord
+end
