@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20170217151157) do
 
   create_table "profiles", force: :cascade do |t|
     t.string   "username",       null: false
-    t.string   "favorite_genre"
-    t.string   "favorite_band"
+    t.string   "favorite_genre", null: false
+    t.string   "favorite_band",  null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

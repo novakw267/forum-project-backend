@@ -2,13 +2,13 @@
 
 # :nodoc:
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :update, :destroy]
+    before_action :set_profile, only: [:show, :update, :destroy]
 
     # GET /profiles
     def index
-      @profiles = Profile.all
+        @profiles = Profile.all
 
-      render json: @profiles
+        render json: @profiles
     end
 
     # GET /profiles/1
@@ -18,39 +18,39 @@ class ProfilesController < ApplicationController
 
     # POST /pfiles
     def create
-      @profile = Profile.new(profile_params)
+        @profile = Profile.new(profile_params)
 
-      if @profile.save
-        render json: @profile, status: :created, location: @profile
-      else
-        render json: @profile.errors, status: :unprocessable_entity
-      end
+        if @profile.save
+            render json: @profile, status: :created
+        else
+            render json: @profile.errors, status: :unprocessable_entity
+        end
     end
 
     # PATCH/PUT /profiles/1
     def update
-      if @profile.update(profile_params)
-        render json: @profile
-        head :no_content
-      else
-        render json: @profile.errors, status: :unprocessable_entity
-      end
+        if @profile.update(profile_params)
+            render json: @profile
+            head :no_content
+        else
+            render json: @profile.errors, status: :unprocessable_entity
+        end
     end
 
     # DELETE /profiles/1
     def destroy
-      @profile.destroy
+        @profile.destroy
     end
 
-  private
+    private
 
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
-      @profile = Profile.find(params[:id])
+        @profile = Profile.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def profile_params
-      params.require(:profile).permit(:username, :favorite_band, :favorite_genre)
+        params.require(:profile).permit(:username, :favorite_band, :favorite_genre)
     end
 end
