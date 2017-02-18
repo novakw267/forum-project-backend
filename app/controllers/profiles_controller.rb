@@ -17,7 +17,7 @@ class ProfilesController < OpenReadController
 
   # POST /pfiles
   def create
-    @profile = current_user.profiles.build(profile_params)
+    @profile = current_user.profile.build(profile_params)
 
     if @profile.save
       render json: @profile, status: :created
