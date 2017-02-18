@@ -17,7 +17,7 @@ class ProfilesController < OpenReadController
 
   # POST /pfiles
   def create
-    @profile = current_user.profile.build(profile_params)
+    @profile = current_user.build_profile(profile_params)
 
     if @profile.save
       render json: @profile, status: :created
@@ -29,7 +29,6 @@ class ProfilesController < OpenReadController
   # PATCH/PUT /profiles/1
   def update
     if @profile.update(profile_params)
-      render json: @profile
       head :no_content
     else
       render json: @profile.errors, status: :unprocessable_entity
@@ -45,7 +44,7 @@ class ProfilesController < OpenReadController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_profile
-    @profile = current_user.profiles.find(params[:id])
+    @profile = Profile.where(id: params[:id], user: current_user).take
   end
 
   # Only allow a trusted parameter "white list" through.

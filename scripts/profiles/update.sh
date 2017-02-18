@@ -6,14 +6,14 @@ curl "${API}${URL_PATH}" \
   --include \
   --request PATCH\
   --header "Content-Type: application/json" \
+  --header "Authorization: Token token=$TOKEN" \
   --data '{
     "profile": {
-      "username": "'"${username}"'",
-      "favorite_genre": "'"${favorite_genre}"'",
-      "favorite_band": "'"${favorite_band}"'"
+      "username": "'"${USERNAME}"'",
+      "favorite_genre": "'"${FAVORITE_GENRE}"'",
+      "favorite_band": "'"${FAVORITE_BAND}"'"
     }
   }'
   #\
-  # --header "Authorization: Token token=$TOKEN"
 
 echo

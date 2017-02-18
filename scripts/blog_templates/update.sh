@@ -8,9 +8,9 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --data '{
     "blog_template": {
-      "blog_title": "'"${blog_title}"'",
-      "subject": "'"${subject}"'",
-      "body": "'"${body}"'"
+      "blog_title": "'"${BLOG_TITLE}"'",
+      "subject": "'"${SUBJECT}"'",
+      "body": "'"${BODY}"'"
     }
   }'
   #\
