@@ -2,5 +2,9 @@
 
 # :nodoc:
 class BlogTemplateSerializer < ActiveModel::Serializer
-  attributes :id, :blog_title, :subject, :body
+  attributes :id, :blog_title, :subject, :body, :editable
+
+  def editable
+    scope == object.user
+  end
 end
