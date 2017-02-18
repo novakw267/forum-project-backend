@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # :nodoc:
-class BlogTemplatesController < ApplicationController
+class BlogTemplatesController < OpenReadController
   before_action :set_blog_template, only: [:show, :update, :destroy]
 
   # GET /blog_templates
@@ -18,7 +18,7 @@ class BlogTemplatesController < ApplicationController
 
   # POST /blog_templates
   def create
-    @blog_template = BlogTemplate.new(blog_template_params)
+    @blog_template = current_user.BlogTemplate.new(blog_template_params)
 
     if @blog_template.save
       render json: @blog_template, status: :created
@@ -52,4 +52,5 @@ class BlogTemplatesController < ApplicationController
   def blog_template_params
     params.require(:blog_template).permit(:blog_title, :subject, :body)
   end
+  private :set_blog_template, :blog_template_params
 end

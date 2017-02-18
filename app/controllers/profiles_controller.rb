@@ -2,55 +2,54 @@
 
 # :nodoc:
 class ProfilesController < ApplicationController
-    before_action :set_profile, only: [:show, :update, :destroy]
+  before_action :set_profile, only: [:show, :update, :destroy]
+  # GET /profiles
+  def index
+    @profiles = Profile.all
 
-    # GET /profiles
-    def index
-        @profiles = Profile.all
+    render json: @profiles
+  end
 
-        render json: @profiles
+  # GET /profiles/1
+  def show
+    render json: @profile
+  end
+
+  # POST /pfiles
+  def create
+    @profile = Profile.new(profile_params)
+
+    if @profile.save
+      render json: @profile, status: :created
+    else
+      render json: @profile.errors, status: :unprocessable_entity
     end
+  end
 
-    # GET /profiles/1
-    def show
-        render json: @profile
+  # PATCH/PUT /profiles/1
+  def update
+    if @profile.update(profile_params)
+      render json: @profile
+      head :no_content
+    else
+      render json: @profile.errors, status: :unprocessable_entity
     end
+  end
 
-    # POST /pfiles
-    def create
-        @profile = Profile.new(profile_params)
+  # DELETE /profiles/1
+  def destroy
+    @profile.destroy
+  end
 
-        if @profile.save
-            render json: @profile, status: :created
-        else
-            render json: @profile.errors, status: :unprocessable_entity
-        end
-    end
+  private
 
-    # PATCH/PUT /profiles/1
-    def update
-        if @profile.update(profile_params)
-            render json: @profile
-            head :no_content
-        else
-            render json: @profile.errors, status: :unprocessable_entity
-        end
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
 
-    # DELETE /profiles/1
-    def destroy
-        @profile.destroy
-    end
-
-    private
-
-    # Use callbacks to share common setup or constraints between actions.
-    def set_profile
-        @profile = Profile.find(params[:id])
-    end
-
-    # Only allow a trusted parameter "white list" through.
-    def profile_params
-        params.require(:profile).permit(:username, :favorite_band, :favorite_genre)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def profile_params
+    params.require(:profile).permit(:username, :favorite_band, :favorite_genre)
+  end
 end

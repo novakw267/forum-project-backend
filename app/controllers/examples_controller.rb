@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+
+# :nodoc:
 class ExamplesController < OpenReadController
   before_action :set_example, only: [:update, :destroy]
 
