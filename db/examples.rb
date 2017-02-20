@@ -33,9 +33,9 @@ Profile.transaction do
     user = User.where(email: email).first
     profile_params = {
       user_id: user.id,
-      username: name,
-      favorite_genre: 'metal',
-      favorite_band: 'the jackson 4'
+      USERNAME: name,
+      FAVORITE_GENRE: 'metal',
+      FAVORITE_BAND: 'the jackson 4'
     }
     next if Profile.exists? profile_params
     Profile.create! profile_params
