@@ -13,6 +13,7 @@ class BlogTemplatesController < OpenReadController
 
   # GET /blog_templates/1
   def show
+    @blog_templates = current_user.profile.blog_templates
     render json: @blog_template
   end
 
@@ -45,7 +46,8 @@ class BlogTemplatesController < OpenReadController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_blog_template
-    @profile = BlogTemplate.where(id: params[:id], user: current_user).take
+    @blog_template = current_user.profile.blog_templates.find(params[:id])
+    # @profile = BlogTemplate.where(id: params[:id], profile: current_user).take
   end
 
   # Only allow a trusted parameter "white list" through.
