@@ -5,6 +5,6 @@ class BlogTemplateSerializer < ActiveModel::Serializer
   attributes :id, :blog_title, :subject, :body, :editable
 
   def editable
-    scope == object.user
+    scope == object.profile.user
   end
 end

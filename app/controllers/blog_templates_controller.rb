@@ -18,7 +18,7 @@ class BlogTemplatesController < OpenReadController
 
   # POST /blog_templates
   def create
-    @blog_template = current_user.blog_templates.build(blog_template_params)
+    @blog_template = current_user.profile.blog_templates.build(blog_template_params)
 
     if @blog_template.save
       render json: @blog_template, status: :created
@@ -45,7 +45,7 @@ class BlogTemplatesController < OpenReadController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_blog_template
-    @blog_template = BlogTemplate.find(params[:id])
+    @profile = BlogTemplate.where(id: params[:id], user: current_user).take
   end
 
   # Only allow a trusted parameter "white list" through.
