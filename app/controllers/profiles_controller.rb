@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 # :nodoc:
+# Inheriting from open read controller means that a profile should only be
+# changable by the user who its attached to.
 class ProfilesController < OpenReadController
   before_action :set_profile, only: [:show, :update, :destroy]
   # GET /profiles
