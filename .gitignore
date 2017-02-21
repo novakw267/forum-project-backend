@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> blog_template
 # Created by https://www.gitignore.io/api/macos,linux
 
 ### macOS ###
@@ -7,7 +10,12 @@
 .LSOverride
 
 # Icon must end with two \r
+<<<<<<< HEAD
 Icon
+=======
+Icon
+
+>>>>>>> blog_template
 # Thumbnails
 ._*
 # Files that might appear in the root of a volume
