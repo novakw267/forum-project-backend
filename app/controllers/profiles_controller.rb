@@ -46,7 +46,7 @@ class ProfilesController < OpenReadController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_profile
-    @profile = Profile.where(id: params[:id], user: current_user).take
+    @profile = Profile.find_by(id: params[:id], user: current_user)
   end
 
   # Only allow a trusted parameter "white list" through.
