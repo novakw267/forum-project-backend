@@ -29,6 +29,8 @@ class ProfilesController < OpenReadController
   end
 
   # PATCH/PUT /profiles/1
+  # This is for users to be able to change their profile name and other parts
+  # their profile.
   def update
     if @profile.update(profile_params)
       head :no_content
