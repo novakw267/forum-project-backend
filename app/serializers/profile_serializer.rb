@@ -6,4 +6,8 @@ class ProfileSerializer < ActiveModel::Serializer
   def editable
     scope == object.user
   end
+
+  def user
+    object.user.pluck(:id)
+  end
 end
