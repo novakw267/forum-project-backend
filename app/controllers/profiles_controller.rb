@@ -44,15 +44,17 @@ class ProfilesController < OpenReadController
     @profile.destroy
   end
 
-  private
+  # private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_profile
-    @profile = Profile.find_by(id: params[:id], user: current_user)
+    @profile = Profile.find(params[:id])
   end
+  private :set_profile
 
   # Only allow a trusted parameter "white list" through.
   def profile_params
     params.require(:profile).permit(:username, :favorite_band, :favorite_genre)
   end
+  private :profile_params
 end
