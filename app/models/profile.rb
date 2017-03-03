@@ -7,4 +7,5 @@ class Profile < ApplicationRecord
   validates :username, presence: true
   validates :favorite_genre, presence: true
   validates :favorite_band, presence: true
+  validates :user, presence: true
 end
