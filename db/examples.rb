@@ -27,20 +27,18 @@ User.transaction do
   end
 end
 
-Profile.transaction do
-  %w(lauren maddie jeff max alec kate brian gary anna).each do |name|
-    email = "#{name}@#{name}.com"
-    user = User.where(email: email).first
-    profile_params = {
-      user_id: user.id,
-      USERNAME: name,
-      FAVORITE_GENRE: 'metal',
-      FAVORITE_BAND: 'the jackson 4'
-    }
-    next if Profile.exists? profile_params
-    Profile.create! profile_params
-  end
-end
+# Profile.transaction do
+#   %w(lauren maddie jeff max alec kate brian gary anna).each do |name|
+#     email = "#{name}@#{name}.com"
+#     user = User.where(email: email).first
+#     profile_params = {
+#       user_id: user.id,
+#       USERNAME: name,
+#       FAVORITE_GENRE: 'metal',
+#       FAVORITE_BAND: 'the jackson 4'
+#     }
+#   end
+# end
 
 # Workout.transaction do
 #   %w(2kBenchmark 3668Benchmark 5kSS 10kSS 2500SS).each do |name|

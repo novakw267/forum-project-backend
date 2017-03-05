@@ -4,5 +4,5 @@
 class User < ApplicationRecord
   include Authentication
   has_many :examples
-  has_one :profile
+  has_many :blog_templates
 end
