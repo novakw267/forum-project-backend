@@ -17,7 +17,7 @@ class BlogTemplatesController < OpenReadController
   # GET /blog_templates/1
   # show allows me to see each individual post by a user
   def show
-    @blog_templates = current_user.profile.blog_templates
+    @blog_templates = current_user.blog_templates
     render json: @blog_template
   end
 
@@ -26,7 +26,7 @@ class BlogTemplatesController < OpenReadController
   # and blog without a join table being present. This also allows the creation
   # of a blog under the current profile which requires the auth token from user.
   def create
-    @blog_template = current_user.profile.blog_templates.build(blog_template_params)
+    @blog_template = current_user.blog_templates.build(blog_template_params)
 
     if @blog_template.save
       render json: @blog_template, status: :created
@@ -57,8 +57,8 @@ class BlogTemplatesController < OpenReadController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_blog_template
-    @blog_template = current_user.profile.blog_templates.find(params[:id])
-    # @profile = BlogTemplate.where(id: params[:id], profile: current_user).take
+    @blog_template = current_user.blog_templates.find(params[:id])
+    #  = BlogTemplate.where(id: params[:id],: current_user).take
   end
 
   # Only allow a trusted parameter "white list" through.
